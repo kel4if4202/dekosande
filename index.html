@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/sweetalert2@7.26.10/dist/sweetalert2.min.css" >
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.26.10/dist/sweetalert2.all.min.js" ></script>
+    <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" rel="stylesheet">
+
+    <script src="http://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.js"></script>
+
+    <style>
+
+        table {
+            width: 50%;
+        }
+
+    </style>
+</head>
+
+<div class="container-fluid "  >
+    
+    <h1 class="text-center" style=" color: #182958; font-size: 50;
+          -webkit-text-stroke-width: 0.5px;
+          -webkit-text-stroke-color: black;">Register</h1>
+
+    <div class="row justify-content-center">
+        <form class='p-5' method="POST" action="" style= 'background-color: #182958; border-radius: 25px'>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label class='text-light'for="inputEmail4">Username</label>
+                        <input type="text" class="form-control" name="usernameP" placeholder="Username">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class='text-light'for="inputPassword4">Password</label>
+                        <input type="password" class="form-control" name="passwordP" placeholder="Password">
+                    </div>
+            </div>
+
+            <div class="form-group">
+                <label class='text-light'for="inputAddress">Nama</label>
+                <input type="text" class="form-control" name="namaP" placeholder="Nama">
+            </div>
+
+            <div class="form-group">
+                <label class='text-light'for="inputAddress2">Alamat</label>
+                <input type="text" class="form-control" name="alamatP" placeholder="Alamat">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label class='text-light'for="inputAddress2">Usia</label>
+                    <input type="text" class="form-control" name="usiaP" placeholder="Usia">
+                </div>
+                <div class="form-group col-md-6">
+                    <label class='text-light'for="inputState">Jenis Kelamin</label>
+                    <select name="jeniskelamin" class="form-control">
+                    <option value="Laki-Laki">Laki-Laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-center text-light">
+                <button type="submit" class="btn btn-light mr-auto" id="register" data-toggle="modal" data-target="#registrasiModal">Register</button>
+                Already have an account?
+                <a class='text-light' href="">Login</a>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<br><br><br><br>
+
+<div>
+
+    <table class="table col-md-6 mx-auto">
+
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Nama</th>
+            <th scope="col">No. HP</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Dimas</td>
+            <td>0812xxxxxxxx</td>
+            <td>dimas@email.com</td>
+          </tr>
+
+          <tr>
+            <th scope="row">2</th>
+            <td>Zaky</td>
+            <td>0812xxxxxxxx</td>
+            <td>zaky@email.com</td>
+          </tr>
+
+          <tr>
+            <th scope="row">3</th>
+            <td>Rendi</td>
+            <td>0812xxxxxxxx</td>
+            <td>rendi@email.com</td>
+          </tr>
+
+          <tr>
+            <th scope="row">4</th>
+            <td>Dendy</td>
+            <td>0812xxxxxxxx</td>
+            <td>dendy@email.com</td>
+          </tr>
+        </tbody>
+
+      </table>
+
+</div>
+
+</html>
