@@ -9,7 +9,7 @@
     <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" rel="stylesheet">
-    <link rel="icon" href="assets/logo-2.jpg">
+    <!-- <link rel="icon" href="assets/logo-2.jpg"> -->
     <title><?= $title ?></title>
 
     <script src="http://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
