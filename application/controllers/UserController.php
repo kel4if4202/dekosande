@@ -32,7 +32,7 @@ class UserController extends CI_Controller {
             $peran = 0;
         } elseif ($prn == "Penjual") {
             $peran = 1;
-        }
+        } 
 
         $data = [
             "NIK" => $this->input->post('nik', true),
