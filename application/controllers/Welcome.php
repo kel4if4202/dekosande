@@ -37,6 +37,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					$data['main_view'] = 'HomeView';
                 	$data['title'] = 'Home';
 					$this->load->view('PageView', $data);
+				} else {
+					redirect('Welcome/index');
 				}
 			}
 		}
