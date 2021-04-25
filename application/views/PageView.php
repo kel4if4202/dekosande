@@ -17,8 +17,9 @@
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.js"></script>
 </head>
+
 <body>
-  <?php$this->load->view($main_view); ?>
+  <?php $this->load->view($main_view); ?>
 </body>
 
 </html>
