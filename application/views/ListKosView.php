@@ -1,5 +1,8 @@
 <!-- ZAKY -->
 
+<!--  
+    Menampilkan Data kost yang ada dalam database dan Menampilkan data Kost dengan dataTable
+-->
 <?php $this->load->view('template/Navbar');?>
 <div class="container" style="width: 100%;">
     <!-- <form class="form-inline" style="margin: 30px auto;">
@@ -7,6 +10,7 @@
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form> -->
 
+    <!-- Membuat table yang berisi list data kost menggunakan dataTable -->
     <table class="table table-dark table-hover table-bordered dataTable" id="mydata" style="width: 100%">
       <thead>
         <tr>
@@ -21,6 +25,8 @@
 
     
 </div>
+
+<!-- Function untuk Mengambil data dari database dengan dataTable -->
 <script type="text/javascript">
     $(document).ready(function() {
         // const id = <?= $this->session->userdata('id'); ?>;
@@ -30,10 +36,11 @@
             [0, 'asc']
         ],
         "ajax": {
-            "url": "<?= site_url('KostController/data_kost') ?>",
-            "type": "GET",
+            "url": "<?= site_url('KostController/data_kost') ?>", // Mengambil fungsi GetKost() dari KostModel
+            "type": "GET", // Mengambil Data Kost dari Database
             "dataSrc": ""
-        },
+        }, 
+        // Data Column yang akan diambil dari database
         "columns": [{
             "data": "namaKos"
             },
