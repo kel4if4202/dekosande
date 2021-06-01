@@ -15,7 +15,7 @@
                 <a class="nav-link" href="<?= site_url('KostController') ?>">List kost</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Masuk</a>
+                <a class="nav-link" href="<?= site_url('Welcome/login') ?>">Masuk</a>
             </li>
     
             </ul>
