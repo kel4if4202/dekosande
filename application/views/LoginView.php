@@ -6,7 +6,7 @@
       <h1 style=" color: #FF4F5A; font-size: 50;
         -webkit-text-stroke-width: 0.5px;
         -webkit-text-stroke-color: black;"><?= $title ?></h1>
-        <form class='p-5' method="POST" action="<?php echo site_url('Welcome/login') ?>" style= 'background-color: #FF4F5A; border-radius: 25px'>
+        <form class='p-5' method="POST" action="<?php echo site_url('UserController/getUser') ?>" style= 'background-color: #FF4F5A; border-radius: 25px'>
         <div class="form-group">
           <!-- <label class='text-light' for="username">Nomor</label> -->
           <input type="text" class="form-control" id="no_hp" name="no_hp" placeholder="Nomor HP">

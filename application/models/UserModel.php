@@ -8,6 +8,12 @@ class UserModel extends CI_Model {
     {
         return $this->db->insert('user', $data);
     }
+
+    public function getUser($no_hp)
+    {
+        $this->db->where('no_hp', $no_hp);
+        return $this->db->get('user')->row();   
+    }
     
 }
 
