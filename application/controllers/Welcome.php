@@ -39,4 +39,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->load->view('PageView', $data);			
 		}
 
+		public function viewKos()
+		{
+			$data['main_view'] = 'KosView';
+			$data['title'] = 'Kos';
+			$this->load->view('PageView', $data);	
+		}
+
 	}
