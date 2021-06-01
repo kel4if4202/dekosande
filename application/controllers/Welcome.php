@@ -32,4 +32,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->load->view('PageView', $data);			
 		}
 
+		public function profile()
+		{
+			$data['main_view'] = 'ProfileView';
+			$data['title'] = 'Profile';
+			$this->load->view('PageView', $data);			
+		}
+
 	}

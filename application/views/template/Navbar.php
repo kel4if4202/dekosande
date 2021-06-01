@@ -17,6 +17,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="<?= site_url('Welcome/login') ?>">Masuk</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= site_url('Welcome/profile') ?>">Profile</a>
+            </li>
     
             </ul>
             <form class="form-inline my-2 my-lg-0">
