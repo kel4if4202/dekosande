@@ -27,6 +27,8 @@ class KostController extends CI_Controller {
         echo json_encode($data);
     }
 
+    
+
 }
 
 /* End of file Controllername.php */
