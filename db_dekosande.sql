@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2021 at 09:46 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.1
+-- Generation Time: Jun 02, 2021 at 04:58 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -77,6 +76,17 @@ CREATE TABLE `kos` (
   `NIK` varchar(16) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `kos`
+--
+
+INSERT INTO `kos` (`idKos`, `namaKos`, `jenisKos`, `hargaKos`, `alamatKos`, `deskripsi`, `NIK`) VALUES
+(1, 'WCW', 1, 1000, 'IFI putsal', 'indomie iga penyet mantap', '123'),
+(3, 'Kedasih', 0, 2000, 'rajawali putsal', 'kang mintain duit', '1234567812345678'),
+(6, 'WhiteHouse', 1, 2000, 'depan ayam mesir', 'nitip barang doang bayar full', '1234'),
+(7, 'Aladin', 1, 3000, 'jalan berlubang depan ifi', 'bapack rese', '123123'),
+(8, 'pondok juara', 1, 3000, 'depan WCW', 'kosnya si mas', '321321');
+
 -- --------------------------------------------------------
 
 --
@@ -135,7 +145,12 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`NIK`, `no_hp`, `password`, `nama`, `jenis_kelamin`, `email`, `tlahir`, `peran`) VALUES
-('1234567812345678', '081208120812', 'e2fc714c4727ee9395f324cd2e7f331f', 'Dimas Guintana', 1, 'dimasguintana@student.telkomuniversity.ac.id', '0000-00-00', 1);
+('111', '082297230225', '3220a0d9e7ba09a22beafc821a14321d', 'kojek', 1, 'a@test.com', '2021-06-01', 0),
+('123', '088888888', '21232f297a57a5a743894a0e4a801fc3', 'admin', 1, 'admin@admin.com', '2021-03-30', 1),
+('123123', '123123', '123123', 'rendi', 1, 'rendi@rendi.com', '2021-06-02', 1),
+('1234', '1234', '1234', 'Zaky', 1, 'zaky@zaky.com', '2021-06-23', 1),
+('1234567812345678', '081208120812', 'e2fc714c4727ee9395f324cd2e7f331f', 'Dimas Guintana', 1, 'dimasguintana@student.telkomuniversity.ac.id', '0000-00-00', 1),
+('321321', '321321', '321321', 'dimas', 1, 'dimas@dimas.com', '2021-06-16', 1);
 
 --
 -- Indexes for dumped tables
@@ -223,7 +238,7 @@ ALTER TABLE `image`
 -- AUTO_INCREMENT for table `kos`
 --
 ALTER TABLE `kos`
-  MODIFY `idKos` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idKos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `pembayaran`
