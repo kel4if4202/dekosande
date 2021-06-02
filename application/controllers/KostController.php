@@ -27,13 +27,7 @@ class KostController extends CI_Controller {
         echo json_encode($data);
     }
 
-    public function getDataKost()
-    {
-        $data['kos'] = $this->KostModel->getAllKost();
-        $data['main_view'] = 'HomeView';
-        $this->load->view('HomeView', $data);
-        
-    }
+    
 
 }
 

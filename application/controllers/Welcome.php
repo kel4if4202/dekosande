@@ -7,6 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		{
 			parent::__construct();
 			$this->load->helper('form');
+			$this->load->model('KostModel');
 			
 		}
 
@@ -15,6 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			session_destroy();
 			$data['main_view'] = 'HomeView';
 			$data['title'] = 'Home';
+			$data['kos'] = $this->KostModel->getAllKost();
 			$this->load->view('PageView', $data);
 		}
 
