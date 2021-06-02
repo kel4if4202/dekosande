@@ -11,6 +11,14 @@ class KostModel extends CI_Model {
         return $query->result();
     }
 
+    public function getAllKost()
+    {
+        return $this->db->select('*')
+                        ->from('kos')
+                        ->get()->result_array();
+        
+    }
+
 }
 
 /* End of file ModelName.php */
