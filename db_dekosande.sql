@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2021 at 04:58 PM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- Generation Time: Jun 04, 2021 at 10:25 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -85,7 +86,8 @@ INSERT INTO `kos` (`idKos`, `namaKos`, `jenisKos`, `hargaKos`, `alamatKos`, `des
 (3, 'Kedasih', 0, 2000, 'rajawali putsal', 'kang mintain duit', '1234567812345678'),
 (6, 'WhiteHouse', 1, 2000, 'depan ayam mesir', 'nitip barang doang bayar full', '1234'),
 (7, 'Aladin', 1, 3000, 'jalan berlubang depan ifi', 'bapack rese', '123123'),
-(8, 'pondok juara', 1, 3000, 'depan WCW', 'kosnya si mas', '321321');
+(8, 'pondok juara', 1, 3000, 'depan WCW', 'kosnya si mas', '321321'),
+(9, 'Gaada nama', 1, 5000, 'Kos Reykim', 'Reykim tinggal di situ', '123');
 
 -- --------------------------------------------------------
 
@@ -183,7 +185,7 @@ ALTER TABLE `image`
 --
 ALTER TABLE `kos`
   ADD PRIMARY KEY (`idKos`),
-  ADD UNIQUE KEY `NIK` (`NIK`);
+  ADD KEY `NIK` (`NIK`) USING BTREE;
 
 --
 -- Indexes for table `kos_fasilitas`
@@ -238,7 +240,7 @@ ALTER TABLE `image`
 -- AUTO_INCREMENT for table `kos`
 --
 ALTER TABLE `kos`
-  MODIFY `idKos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idKos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `pembayaran`

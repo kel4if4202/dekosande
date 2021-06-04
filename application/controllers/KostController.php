@@ -27,6 +27,14 @@ class KostController extends CI_Controller {
         echo json_encode($data);
     }
 
+    public function data_kost_id($idKos) 
+    {
+        $data['main_view'] = 'KosView';
+        $data['user'] = $this->KostModel->getKostbyId($idKos);
+        $this->load->view('PageView', $data);
+        
+    }
+
     
 
 }
