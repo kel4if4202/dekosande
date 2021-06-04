@@ -13,7 +13,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		public function index()
 		{
-			session_destroy();
 			$data['main_view'] = 'HomeView';
 			$data['title'] = 'Home';
 			$data['kos'] = $this->KostModel->getAllKost();
@@ -25,6 +24,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$data['main_view'] = 'LoginView';
 			$data['title'] = 'Login';
 			$this->load->view('PageView', $data);
+		}
+
+		public function logout()
+		{
+			session_destroy();
+			redirect('Welcome');
 		}
 
 		public function register()
