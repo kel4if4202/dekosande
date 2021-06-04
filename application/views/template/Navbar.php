@@ -8,35 +8,35 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="<?= site_url('Welcome/index')?>">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= site_url('KostController') ?>">List kost</a>
-            </li>
-            <?php if($this->session->userdata('data_login') == False) {?>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= site_url('Welcome/login') ?>">Login</a>
-            </li>
-            <?php } else {?>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= site_url('Welcome/logout') ?>">Logout</a>
-            </li>
-            <?php } ?>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= site_url('Welcome/profile') ?>">Profile</a>
-            </li>
-    
+                <li class="nav-item active">
+                    <a class="nav-link" href="<?= site_url('Welcome/index')?>">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= site_url('KostController') ?>">List kost</a>
+                </li>
             </ul>
-            <button style="margin-right:20px"class="btn btn-outline-light" type="submit">
-                <i class="bi-cart-fill me-1"></i>
-                Cart
-                <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-            </button>
-            <form class="form-inline my-2 my-lg-0">
+
+            <?php if($this->session->userdata('data_login') == False) {?>
+
+                <a class="btn btn-outline-light" href="<?= site_url('Welcome/login') ?>">Login</a>
+
+            <?php } else {?>
+
+                <button style="margin-right:20px"class="btn btn-outline-light" type="submit">
+                    <i class="bi-cart-fill me-1"></i>
+                        History
+                    <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                </button>
+
+                <!-- <a class="btn btn-outline-light mr-2" href="<?= site_url('Welcome/logout') ?>">Logout</a> -->
+                <a class="btn btn-outline-light " href="<?= site_url('Welcome/profile') ?>">Profile</a>
+
+            <?php } ?>
+
+            <!-- <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-            </form>
+            </form> -->
         </div>
     </nav>
 </div>

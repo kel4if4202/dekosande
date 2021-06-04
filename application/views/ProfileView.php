@@ -1,9 +1,11 @@
 <!-- Rendi -->
-<div class="py-5">
+<?php $this->load->view('template/Navbar');?>
+
+<div class="py-5 mt-5">
   <div class="container">
     <div class="row">
       <div class="col-md-3 col-12 p-3 p-md-0 d-flex flex-column align-items-center">
-        <img src="<?= base_url('assets/bendi.png') ?>" alt="bendi.png" style="border-radius: 100px; border: 1px solid white; box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.5);" width="200px" height="200px">
+        <img src="<?= base_url('asset/0.jpg') ?>" alt="bendi.png" style="border-radius: 100px; border: 1px solid white; box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.5);" width="200px" height="200px">
         <h3 class="my-3 text-wrap text-center">Profil <?= $this->session->userdata('nama'); ?></h3>
       </div>
       <div class="col-md-9 col-12 p-3 p-md-0 p-3">
