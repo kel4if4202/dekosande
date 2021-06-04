@@ -67,9 +67,18 @@ class UserController extends CI_Controller {
 
             if ($no_hp == $query->no_hp) {
                 if ($password == $query->password) {
-                    $data['main_view'] = 'HomeView';
-                    $data['title'] = 'Home';
-                    $this->load->view('PageView', $data);
+                    $data_login = [
+                        'NIK' => $query->NIK,
+                        'no_hp' => $query->no_hp,
+                        'nama' => $query->nama,
+                        'jenis_kelamin' => $query->jenis_kelamin,
+                        'email' => $query->email,
+                        'tlahir' => $query->tlahir,
+                        'peran' => $query->peran,
+                    ];
+                    $this->session->set_userdata('data_login', $data_login);
+
+                    redirect('Welcome');
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password Invalid</div>');
                     redirect('Welcome/login');

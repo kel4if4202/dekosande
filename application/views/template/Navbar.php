@@ -14,9 +14,15 @@
             <li class="nav-item">
                 <a class="nav-link" href="<?= site_url('KostController') ?>">List kost</a>
             </li>
+            <?php if($this->session->userdata('data_login') == False) {?>
             <li class="nav-item">
-                <a class="nav-link" href="<?= site_url('Welcome/login') ?>">Masuk</a>
+                <a class="nav-link" href="<?= site_url('Welcome/login') ?>">Login</a>
             </li>
+            <?php } else {?>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= site_url('Welcome/logout') ?>">Logout</a>
+            </li>
+            <?php } ?>
             <li class="nav-item">
                 <a class="nav-link" href="<?= site_url('Welcome/profile') ?>">Profile</a>
             </li>
