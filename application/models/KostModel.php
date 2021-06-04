@@ -19,6 +19,13 @@ class KostModel extends CI_Model {
         
     }
 
+    public function getKostbyId($idKos) 
+    {
+        $query = $this->db->query("SELECT * FROM kos WHERE idKos= '$idKos' ");
+
+        return $query->row();
+    }
+
 }
 
 /* End of file ModelName.php */

@@ -44,7 +44,7 @@
                                     </div>
                                     <!-- Product actions-->
                                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="'.site_url('Welcome/viewKos').' ">View Kost</a></div>
+                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="'.site_url('KostController/data_kost_id/'.$data["idKos"]).'">View Kost</a></div>
                                     </div>
                                 </div>
                             </div>
