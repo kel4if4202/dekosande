@@ -18,6 +18,10 @@ class KostModel extends CI_Model {
                         ->get()->result_array();
         
     }
+    public function tambahKos($data)
+    {
+        return $this->db->insert('kos', $data);
+    }
 
 }
 

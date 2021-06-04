@@ -14,6 +14,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?= site_url('KostController') ?>">List kost</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= site_url('Welcome/InputKos') ?>">Input Kos</a>
+                </li>
             </ul>
 
             <?php if($this->session->userdata('data_login') == False) {?>

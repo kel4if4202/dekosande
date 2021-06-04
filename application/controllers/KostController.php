@@ -19,6 +19,21 @@ class KostController extends CI_Controller {
         $data['title'] = 'Kost View';
         $this->load->view('PageView', $data);
     }
+    public function inputKos()
+    {
+        $nik = $this->session->userdata('data_login');
+        $data = [
+            "namaKos" => $this->input->post('namaKos', true),
+			"jenisKos" => $this->input->POST('jenisKos', true),
+			"hargaKos" => $this->input->post('hargaKos', true),
+			"alamatKos" => $this->input->post('alamatKos', true),
+            "deskripsi" => $this->input->post('deskripsi', true),
+            "NIK" => $nik['NIK']
+		];
+
+		$this->KostModel->tambahKos($data);
+		redirect('Welcome','refresh');
+    }
 
     public function data_kost()
     {

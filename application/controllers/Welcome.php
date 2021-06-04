@@ -52,5 +52,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$data['title'] = 'Kos';
 			$this->load->view('PageView', $data);	
 		}
+		public function inputKos()
+		{
+			$data['main_view'] = 'inputKosView';
+			$data['title'] = 'Input Kos';
+			$this->load->view('PageView', $data);	
+		}
 
 	}
