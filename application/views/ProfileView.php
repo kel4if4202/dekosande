@@ -38,7 +38,7 @@
             </div>
             <div class="form-group">
               <label for="password" class="col-form-label">Password</label>
-              <input type="password" id="tlahir" name="password" class="form-control">
+              <input type="password" id="tlahir" name="password" class="form-control" >
             </div>
             <div class="form-group">
               <input type="hidden" id="hidden" name="hidden" class="form-control">
@@ -53,4 +53,23 @@
   </div>
 </div>
 
-<!-- <?= $this->session->userdata('data_login')['NIK'] ?> -->
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel">Konfirmasi</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Apakah anda ingin update profile anda?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="update">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
