@@ -12,28 +12,33 @@
         <div class="ml-md-5 ml-0">
           <form id="profileForm" method="POST">
             <div class="form-group">
-              <label for="nip" class="col-form-label">NIK</label>
-              <input type="text" id="NIK" name="NIK" class="form-control">
+              <label for="nik" class="col-form-label">NIK</label>
+              <input type="text" id="NIK" name="NIK" class="form-control" value="<?= $this->session->userdata('data_login')['NIK'] ?>">
+             
             </div>
             <div class="form-group">
-              <label for="name" class="col-form-label">No hp</label>
-              <input type="text" id="no_hp" name="no_hp" class="form-control">
+              <label for="no_hp" class="col-form-label">No hp</label>
+              <input type="text" id="no_hp" name="no_hp" class="form-control" value="<?= $this->session->userdata('data_login')['no_hp'] ?>">
             </div>
             <div class="form-group">
               <label for="username" class="col-form-label">Nama</label>
-              <input type="text" id="nama" name="nama" class="form-control">
+              <input type="text" id="nama" name="nama" class="form-control" value="<?= $this->session->userdata('data_login')['nama'] ?>">
             </div>
             <div class="form-group">
-              <label for="password" class="col-form-label">Jenis Kelamin</label>
-              <input type="password" id="jenis_kelamin" name="jenis_kelamin" class="form-control">
+              <label for="jenis_kelamin" class="col-form-label">Jenis Kelamin</label>
+              <input type="text" id="jenis_kelamin" name="jenis_kelamin" class="form-control" value="<?= $this->session->userdata('data_login')['jenis_kelamin'] ?>">
             </div>
             <div class="form-group">
-              <label for="password" class="col-form-label">Email</label>
-              <input type="password" id="email" name="email" class="form-control">
+              <label for="email" class="col-form-label">Email</label>
+              <input type="text" id="email" name="email" class="form-control" value="<?= $this->session->userdata('data_login')['email'] ?>">
             </div>
             <div class="form-group">
-              <label for="password" class="col-form-label">Tanggal Lahir</label>
-              <input type="password" id="tlahir" name="tlahir" class="form-control">
+              <label for="tlahir" class="col-form-label">Tanggal Lahir</label>
+              <input type="text" id="tlahir" name="tlahir" class="form-control" value="<?= $this->session->userdata('data_login')['tlahir'] ?>">
+            </div>
+            <div class="form-group">
+              <label for="password" class="col-form-label">Password</label>
+              <input type="password" id="tlahir" name="password" class="form-control" >
             </div>
             <div class="form-group">
               <input type="hidden" id="hidden" name="hidden" class="form-control">
@@ -68,54 +73,3 @@
   </div>
 </div>
 
-<script type="text/javascript">
-  $(document).ready(function() {
-    getData()
-  
-    function getData() {
-      const username = "<?= $this->session->userdata("username"); ?>"
-      const url = `<?= base_url("PasienController/data_pasien/") ?>${username}`
-      $.ajax({
-        url: url,
-        type: "GET",
-        dataType: "json",
-        success: function(data) {
-          if (data) {
-            $("#nip").val(data.nip);
-            $("#name").val(data.nama);
-            $("#username").val(data.username);
-            $("#hidden").val(data.username);
-          } else {
-            console.log("error");
-          }
-        }
-      })
-    }
-
-    $("#profileForm").on("submit", function(event) {
-      event.preventDefault();
-      let form = $(this);
-      $("#update").on("click", function() {
-        const username = $("#hidden").val();
-        $.ajax({
-          url: `<?= base_url("PasienController/update_profile/") ?>${username}`,
-          type: 'post',
-          data: form.serialize(),
-          dataType: 'json',
-          success: function(res) {
-            if (res.success == true) {
-              getData()
-            } else {
-              $.each(res.messages, function(key, value) {
-                let el = $('#' + key);
-                el.closest('div.form-group').find("div.error").remove();
-                el.after(value);
-              })
-            }
-            $("#modal").modal('hide');
-          }
-        });
-      })
-    })
-  })
-</script>

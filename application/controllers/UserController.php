@@ -90,6 +90,11 @@ class UserController extends CI_Controller {
         }
     }
 
+    public function updateUser($data, $username) {
+        $this->db->where('username', $username);
+        return $this->db->update('user', $data);
+    }
+
 }
 
 /* End of file Controllername.php */
