@@ -99,26 +99,25 @@ class UserController extends CI_Controller {
         $this->form_validation->set_rules('email', 'Email', 'required');
         $this->form_validation->set_rules('tlahir', 'Tlahir', 'required');   
 
-        foreach ($_POST as $key => $value) {
-            $data[$key] = $value;
-        }
+        // foreach ($_POST as $key => $value) {
+        //     $data[$key] = $value;
+        // }
         
         if ($this->form_validation->run() == FALSE) {
             redirect('Welcome/login', 'refresh');
         } else {
+            $NIK = $this->input->post('NIK');
             $data_update = [
-                'NIK' => $this->input->post('NIK'),
+                // 'NIK' => $this->input->post('NIK'),
                 'no_hp' => $this->input->post('no_hp'),
                 'nama' => $this->input->post('nama'),
                 'jenis_kelamin' => $this->input->post('jenis_kelamin'),
                 'email' => $this->input->post('email'),
                 'tlahir' => $this->input->post('tlahir')
             ];
-            $this->UserModel->updateUser($data_update, $no_hp);
-
-            // $data['main_view'] = 'ProfileView';
-            // $data['title'] = 'Profile';
-            // $this->load->view('PageView', $data);
+            $this->UserModel->updateUser($data_update, $NIK);
+            $data_update['NIK'] = $NIK;
+            $this->session->set_userdata('data_login',$data_update);
 
             redirect('Welcome/profile');
         }
