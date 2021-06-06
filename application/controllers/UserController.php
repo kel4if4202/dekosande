@@ -90,9 +90,38 @@ class UserController extends CI_Controller {
         }
     }
 
-    public function updateUser($data, $username) {
-        $this->db->where('username', $username);
-        return $this->db->update('user', $data);
+    public function updateUser() {
+        $this->form_validation->set_rules('NIK', 'NIK', 'required');
+        $this->form_validation->set_rules('no_hp', 'No_hp', 'required');
+        // $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_rules('nama', 'Nama', 'required');
+        $this->form_validation->set_rules('jenis_kelamin', 'Jenis_kelamin', 'required');
+        $this->form_validation->set_rules('email', 'Email', 'required');
+        $this->form_validation->set_rules('tlahir', 'Tlahir', 'required');   
+
+        foreach ($_POST as $key => $value) {
+            $data[$key] = $value;
+        }
+        
+        if ($this->form_validation->run() == FALSE) {
+            redirect('Welcome/login', 'refresh');
+        } else {
+            $data_update = [
+                'NIK' => $this->input->post('NIK'),
+                'no_hp' => $this->input->post('no_hp'),
+                'nama' => $this->input->post('nama'),
+                'jenis_kelamin' => $this->input->post('jenis_kelamin'),
+                'email' => $this->input->post('email'),
+                'tlahir' => $this->input->post('tlahir')
+            ];
+            $this->UserModel->updateUser($data_update, $no_hp);
+
+            // $data['main_view'] = 'ProfileView';
+            // $data['title'] = 'Profile';
+            // $this->load->view('PageView', $data);
+
+            redirect('Welcome/profile');
+        }
     }
 
 }
