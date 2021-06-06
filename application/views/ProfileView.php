@@ -14,7 +14,7 @@
           <form id="profileForm" method="POST" action="<?php echo site_url('UserController/updateUser') ?>">
             <div class="form-group">
               <label for="nik" class="col-form-label">NIK</label>
-              <input type="text" id="NIK" name="NIK" class="form-control" value="<?= $this->session->userdata('data_login')['NIK'] ?>">
+              <input type="text" id="NIK" name="NIK" class="form-control" readonly value="<?= $this->session->userdata('data_login')['NIK'] ?>">
              
             </div>
             <div class="form-group">
