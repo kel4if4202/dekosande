@@ -1,4 +1,5 @@
 <!-- Rendi -->
+<?= $this->session->flashdata('profile'); ?>
 <?php $this->load->view('template/Navbar');?>
 
 <div class="py-5 mt-5">
@@ -10,7 +11,7 @@
       </div>
       <div class="col-md-9 col-12 p-3 p-md-0 p-3">
         <div class="ml-md-5 ml-0">
-          <form id="profileForm" method="POST">
+          <form id="profileForm" method="POST" action="<?php echo site_url('UserController/updateUser') ?>">
             <div class="form-group">
               <label for="nik" class="col-form-label">NIK</label>
               <input type="text" id="NIK" name="NIK" class="form-control" value="<?= $this->session->userdata('data_login')['NIK'] ?>">
@@ -52,24 +53,3 @@
     </div>
   </div>
 </div>
-
-<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalLabel">Konfirmasi</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Apakah anda ingin update profile anda?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="update">Submit</button>
-      </div>
-    </div>
-  </div>
-</div>
-
