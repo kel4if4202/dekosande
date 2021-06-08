@@ -7,9 +7,11 @@
 <div>
     <!-- Navigation-->
     <?php $this->load->view('template/Navbar');?>
+    
 
     <!-- Product section-->
     <section class="py-5">
+    <?= $this->session->flashdata('message_booking'); ?>
        
         <div class="container px-4 px-lg-5 my-5">
             <div class="row gx-4 gx-lg-5 align-items-center">
@@ -24,7 +26,7 @@
                     <p class="lead"><?= $user->deskripsi?></p>
                     <div class="d-flex">
                         <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
-                        <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                        <button class="btn btn-outline-dark flex-shrink-0" type="button" onclick="document.location.href='<?= site_url('BookingController/input_booking/'.$user->idKos) ?>'">
                             <i class="bi-cart-fill me-1"></i>
                             Booking Kost
                         </button>

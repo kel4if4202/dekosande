@@ -11,6 +11,11 @@ class BookingModel extends CI_Model {
         return $query->result();
     }
 
+    public function addBooking($data_booking)
+    {
+        return $this->db->insert('booking', $data_booking);
+    }
+
 }
 
 /* End of file ModelName.php */
