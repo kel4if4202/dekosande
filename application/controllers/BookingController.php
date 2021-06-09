@@ -48,6 +48,11 @@ class BookingController extends CI_Controller {
         // $this->load->view('PageView', $data);
     }
 
-    
+    public function getBookingByNIK()
+    {
+        $data = $this->BookingModel->getBookingByNIK($this->session->userdata('data_login')['NIK']);
+
+        echo json_encode($data);
+    }
 
 }
