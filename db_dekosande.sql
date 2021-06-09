@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 09, 2021 at 12:12 PM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- Generation Time: Jun 09, 2021 at 04:20 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -35,24 +36,6 @@ CREATE TABLE `booking` (
   `NIK` varchar(16) NOT NULL,
   `idKos` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `booking`
---
-
-INSERT INTO `booking` (`idBooking`, `status`, `tanggal`, `biaya`, `NIK`, `idKos`) VALUES
-(1, 0, '2021-06-08', 2000, '111', 3),
-(5, 0, '2021-06-08', 2000, '111', 3),
-(6, 0, '2021-06-08', 2000, '111', 3),
-(7, 0, '2021-06-08', 2000, '111', 3),
-(8, 0, '2021-06-08', 2000, '111', 3),
-(9, 0, '2021-06-08', 2000, '111', 3),
-(10, 0, '2021-06-08', 2000, '111', 3),
-(11, 0, '2021-06-08', 1000, '111', 1),
-(12, 0, '2021-06-08', 2000, '111', 6),
-(13, 0, '2021-06-08', 3000, '111', 8),
-(14, 0, '2021-06-08', 2000, '111', 6),
-(15, 0, '2021-06-08', 3000, '111', 7);
 
 -- --------------------------------------------------------
 
@@ -93,18 +76,6 @@ CREATE TABLE `kos` (
   `deskripsi` text NOT NULL,
   `NIK` varchar(16) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `kos`
---
-
-INSERT INTO `kos` (`idKos`, `namaKos`, `jenisKos`, `hargaKos`, `alamatKos`, `deskripsi`, `NIK`) VALUES
-(1, 'WCW', 1, 1000, 'IFI putsal', 'indomie iga penyet mantap, Suara suara !', '123'),
-(3, 'Kedasih', 0, 2000, 'rajawali putsal', 'kang mintain duit', '1234567812345678'),
-(6, 'WhiteHouse', 1, 2000, 'depan ayam mesir', 'nitip barang doang bayar full', '1234'),
-(7, 'Aladin', 1, 3000, 'jalan berlubang depan ifi', 'bapack rese', '123123'),
-(8, 'pondok juara', 1, 3000, 'depan WCW', 'kosnya si mas', '321321'),
-(9, 'Kost Tes', 1, 1000000, 'Jalan kenangan', 'ini adalah kosan ter gege, ini namanya deskripsi, biar banyak aja deskripsinyeeh', '111');
 
 -- --------------------------------------------------------
 
@@ -158,18 +129,6 @@ CREATE TABLE `user` (
   `tlahir` date NOT NULL,
   `peran` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`NIK`, `no_hp`, `password`, `nama`, `jenis_kelamin`, `email`, `tlahir`, `peran`) VALUES
-('111', '082297230225', '3220a0d9e7ba09a22beafc821a14321d', 'kojek', 1, 'a@test.com', '2021-06-01', 0),
-('123', '088888888', '21232f297a57a5a743894a0e4a801fc3', 'admin', 1, 'admin@admin.com', '2021-03-30', 1),
-('123123', '123123', '123123', 'rendi', 1, 'rendi@rendi.com', '2021-06-02', 1),
-('1234', '1234', '1234', 'Zaky', 1, 'zaky@zaky.com', '2021-06-23', 1),
-('1234567812345678', '081208120812', 'e2fc714c4727ee9395f324cd2e7f331f', 'Dimas Guintana', 1, 'dimasguintana@student.telkomuniversity.ac.id', '0000-00-00', 1),
-('321321', '321321', '321321', 'dimas', 1, 'dimas@dimas.com', '2021-06-16', 1);
 
 --
 -- Indexes for dumped tables
@@ -239,7 +198,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `idBooking` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idBooking` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `fasilitas`

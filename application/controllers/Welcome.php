@@ -65,4 +65,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$data['title'] = 'History Booking';
 			$this->load->view('PageView', $data);
 		}
+
+		public function pembayaran()
+		{
+			$data['main_view'] = 'PembayaranView';
+			$data['title'] = 'Pembayaran';
+			$this->load->view('PageView', $data);
+		}
 	}
