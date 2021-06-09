@@ -37,7 +37,7 @@ class KostController extends CI_Controller {
 
     public function data_kost()
     {
-        $data = $this->KostModel->GetKost();
+        $data = $this->KostModel->getKostbyNIK($this->session->userdata('data_login')['NIK']);
 
         echo json_encode($data);
     }
@@ -50,6 +50,7 @@ class KostController extends CI_Controller {
         
     }
 
+    
     
 
 }

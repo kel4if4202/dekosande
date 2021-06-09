@@ -4,21 +4,22 @@
     Menampilkan Data kost yang ada dalam database dan Menampilkan data Kost dengan dataTable
 -->
 <?php $this->load->view('template/Navbar');?>
-<div class="container" style="width: 100%;">
+<div class="container" style="width: 100%; margin-top: 100px;">
     <!-- <form class="form-inline" style="margin: 30px auto;">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form> -->
 
     <!-- Membuat table yang berisi list data kost menggunakan dataTable -->
-    <table class="table table-dark table-hover table-bordered dataTable" id="mydata" style="width: 100%">
-      <thead>
+    <table class="table table-hover dataTable" id="mydata" style="width: 100%">
+      <thead class="thead-dark">
         <tr>
           <th>Nama Kost</th>
           <th>jenis Kost</th>
           <th>Harga Kost</th>
           <th>Alamat kost</th>
           <th>Deskripsi</th>
+          <th>Aksi</th>
         </tr>
       </thead>
     </table>
@@ -45,7 +46,10 @@
             "data": "namaKos"
             },
             {
-            "data": "jenisKos"
+            "data": "jenisKos", 
+            render: function(data, type, row) {
+                return data == 0 ?"Perempuan" :"Laki-laki"
+            }
             },
             {
             "data": "hargaKos"
@@ -55,11 +59,13 @@
             },
             {
             "data": "deskripsi",
-            // "render": function(data, type, row) {
-            //     return <?= $this->session->userdata('hak_akses'); ?> == 2 && row.id_dokter == id ? `<button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" data-whatever="${data}"><i class="fas fa-trash"></i></button>
-            //     <div class="mt-2 mt-md-0 ml-md-2 d-inline-block"><button class="btn btn-primary mr-2" data-toggle="modal" data-target="#editModal" data-edit="${data}"><i class="fas fa-edit"></i></button></div>` : ''
-            // }
+            }, 
+            {
+            "render": function(data, type, row){
+            return '<button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" data-whatever="${data}"><i class="fas fa-user-times"></i></button><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateModald" data-whatever="${data}"><i class="fas fa-user-edit"></i></button>'
             }
+            }
+            
         ]
         });
     })

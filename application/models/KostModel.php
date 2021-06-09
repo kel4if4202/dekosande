@@ -30,6 +30,13 @@ class KostModel extends CI_Model {
         return $query->row();
     }
 
+    public function getKostbyNIK($NIK) 
+    {
+        $query = $this->db->query("SELECT * FROM kos WHERE NIK = '$NIK' ");
+
+        return $query->result_array();
+    }
+
 }
 
 /* End of file ModelName.php */
