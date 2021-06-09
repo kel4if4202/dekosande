@@ -56,8 +56,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		{
 			$data['main_view'] = 'inputKosView';
 			$data['title'] = 'Input Kos';
-			$this->load->view('PageView', $data);	
+			$this->load->view('PageView', $data);
 		}
 
-		
+		public function historyBooking()
+		{
+			$data['main_view'] = 'HistoryBookingView';
+			$data['title'] = 'History Booking';
+			$this->load->view('PageView', $data);
+		}
 	}

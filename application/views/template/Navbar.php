@@ -25,14 +25,14 @@
 
             <?php } else {?>
 
-                <button style="margin-right:20px"class="btn btn-outline-light" type="submit">
+                <!-- <button style="margin-right:20px"class="btn btn-outline-light" type="submit" href='<?= site_url('Welcome/historyBooking') ?>'>
                     <i class="bi-cart-fill me-1"></i>
                         History
-                    <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                </button>
+                </button> -->
 
-                <!-- <a class="btn btn-outline-light mr-2" href="<?= site_url('Welcome/logout') ?>">Logout</a> -->
+                <a class="btn btn-outline-light " href="<?= site_url('Welcome/historyBooking') ?>">History</a>
                 <a class="btn btn-outline-light " href="<?= site_url('Welcome/profile') ?>">Profile</a>
+                <a class="btn btn-outline-light mr-2" href="<?= site_url('Welcome/logout') ?>">Logout</a>
 
             <?php } ?>
 

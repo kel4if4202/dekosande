@@ -16,6 +16,12 @@ class BookingModel extends CI_Model {
         return $this->db->insert('booking', $data_booking);
     }
 
+    public function getBookingByNIK($nik)
+    {
+        $this->db->where('NIK', $nik);
+        return $this->db->get('booking')->result_array();   
+    }
+
 }
 
 /* End of file ModelName.php */
