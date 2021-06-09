@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2021 at 10:25 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.1
+-- Generation Time: Jun 09, 2021 at 12:12 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -36,6 +35,24 @@ CREATE TABLE `booking` (
   `NIK` varchar(16) NOT NULL,
   `idKos` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `booking`
+--
+
+INSERT INTO `booking` (`idBooking`, `status`, `tanggal`, `biaya`, `NIK`, `idKos`) VALUES
+(1, 0, '2021-06-08', 2000, '111', 3),
+(5, 0, '2021-06-08', 2000, '111', 3),
+(6, 0, '2021-06-08', 2000, '111', 3),
+(7, 0, '2021-06-08', 2000, '111', 3),
+(8, 0, '2021-06-08', 2000, '111', 3),
+(9, 0, '2021-06-08', 2000, '111', 3),
+(10, 0, '2021-06-08', 2000, '111', 3),
+(11, 0, '2021-06-08', 1000, '111', 1),
+(12, 0, '2021-06-08', 2000, '111', 6),
+(13, 0, '2021-06-08', 3000, '111', 8),
+(14, 0, '2021-06-08', 2000, '111', 6),
+(15, 0, '2021-06-08', 3000, '111', 7);
 
 -- --------------------------------------------------------
 
@@ -82,12 +99,12 @@ CREATE TABLE `kos` (
 --
 
 INSERT INTO `kos` (`idKos`, `namaKos`, `jenisKos`, `hargaKos`, `alamatKos`, `deskripsi`, `NIK`) VALUES
-(1, 'WCW', 1, 1000, 'IFI putsal', 'indomie iga penyet mantap', '123'),
+(1, 'WCW', 1, 1000, 'IFI putsal', 'indomie iga penyet mantap, Suara suara !', '123'),
 (3, 'Kedasih', 0, 2000, 'rajawali putsal', 'kang mintain duit', '1234567812345678'),
 (6, 'WhiteHouse', 1, 2000, 'depan ayam mesir', 'nitip barang doang bayar full', '1234'),
 (7, 'Aladin', 1, 3000, 'jalan berlubang depan ifi', 'bapack rese', '123123'),
 (8, 'pondok juara', 1, 3000, 'depan WCW', 'kosnya si mas', '321321'),
-(9, 'Gaada nama', 1, 5000, 'Kos Reykim', 'Reykim tinggal di situ', '123');
+(9, 'Kost Tes', 1, 1000000, 'Jalan kenangan', 'ini adalah kosan ter gege, ini namanya deskripsi, biar banyak aja deskripsinyeeh', '111');
 
 -- --------------------------------------------------------
 
@@ -163,8 +180,8 @@ INSERT INTO `user` (`NIK`, `no_hp`, `password`, `nama`, `jenis_kelamin`, `email`
 --
 ALTER TABLE `booking`
   ADD PRIMARY KEY (`idBooking`),
-  ADD UNIQUE KEY `idKos` (`idKos`),
-  ADD UNIQUE KEY `NIK` (`NIK`);
+  ADD KEY `idKos` (`idKos`) USING BTREE,
+  ADD KEY `NIK` (`NIK`) USING BTREE;
 
 --
 -- Indexes for table `fasilitas`
@@ -185,7 +202,7 @@ ALTER TABLE `image`
 --
 ALTER TABLE `kos`
   ADD PRIMARY KEY (`idKos`),
-  ADD KEY `NIK` (`NIK`) USING BTREE;
+  ADD UNIQUE KEY `NIK` (`NIK`);
 
 --
 -- Indexes for table `kos_fasilitas`
@@ -222,7 +239,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `idBooking` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idBooking` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `fasilitas`
