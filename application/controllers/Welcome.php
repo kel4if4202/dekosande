@@ -72,4 +72,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$data['title'] = 'Pembayaran';
 			$this->load->view('PageView', $data);
 		}
+
+		public function edit_kost()
+		{
+			$data['main_view'] = 'EditKosView';
+			$data['title'] = 'Edit Kost';
+			$this->load->view('PageView', $data);
+		}
 	}

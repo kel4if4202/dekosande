@@ -62,7 +62,9 @@
             }, 
             {
             "render": function(data, type, row){
-            return '<button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" data-whatever="${data}"><i class="fas fa-user-times"></i></button><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateModald" data-whatever="${data}"><i class="fas fa-user-edit"></i></button>'
+            return '<button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" data-whatever="${data}">'+
+            '<i class="fas fa-user-times"></i></button><button type="button" class="btn btn-primary" onclick=document.location.href="<?= site_url('Welcome/edit_kost') ?>" data-toggle="modal" data-target="#updateModald" data-whatever="${data}">'+
+            '<i class="fas fa-user-edit"></i></button>'
             }
             }
             
