@@ -11,12 +11,16 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="<?= site_url('Welcome/index')?>">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= site_url('KostController') ?>">List kost</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= site_url('Welcome/InputKos') ?>">Input Kos</a>
-                </li>
+                <?php if($this->session->userdata('data_login') == True) {?>
+                    <?php if($this->session->userdata('data_login')['NIK'] == 1) {?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= site_url('KostController') ?>">List kost</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= site_url('Welcome/InputKos') ?>">Input Kos</a>
+                        </li>
+                    <?php }?>
+                <?php };?>
             </ul>
 
             <?php if($this->session->userdata('data_login') == False) {?>

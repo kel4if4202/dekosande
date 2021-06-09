@@ -10,8 +10,9 @@
       <thead class="thead-dark">
         <tr>
           <th>Tanggal</th>
-          <th>ID Kos</th>
+          <th>Nama Kos</th>
           <th>Status</th>
+          <th>Action</th>
         </tr>
       </thead>
     </table>
@@ -38,7 +39,7 @@
             "data": "tanggal"
             },
             {
-            "data": "idKos"
+            "data": "namaKos"
             },
             {
             "data": "status", 
@@ -46,6 +47,11 @@
                 return data == 0 ? "Belum Lunas" :"Lunas"
             }
              
+            },
+            {
+                "render": function(data, type, row){
+                    return '<button type="button" class="btn btn-primary" onclick=document.location.href="<?= site_url('Welcome/pembayaran') ?>"><i class="fas fa-user-edit"></i></button>'
+                }
             }
         ]
         });
