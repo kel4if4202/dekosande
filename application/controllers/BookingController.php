@@ -31,6 +31,7 @@ class BookingController extends CI_Controller {
     public function input_booking($idKos) 
     {
         // var_dump($this->session->userdata("data_login")["NIK"]);
+        
         $data['user'] = $this->KostModel->getKostbyId($idKos);
         $data['main_view'] = 'KosView';
         
@@ -42,10 +43,15 @@ class BookingController extends CI_Controller {
             "idKos" =>  $idKos,
         ];
 
-        $this->BookingModel->addBooking($data_booking);
-        $this->session->set_flashdata('message_booking', '<div class="alert alert-success"> <strong>Success!</strong> Kost Berhasil dibooking. </div>');
-        redirect('KostController/data_kost_id/'.$idKos);
-        // $this->load->view('PageView', $data);
+        if($this->session->userdata('data_login') == False) 
+        {
+            redirect('Welcome/login');
+        } else {
+            $this->BookingModel->addBooking($data_booking);
+            $this->session->set_flashdata('message_booking', '<div class="alert alert-success"> <strong>Success!</strong> Kost Berhasil dibooking. </div>');
+            redirect('KostController/data_kost_id/'.$idKos);
+        }
+
     }
 
     public function getBookingByNIK()
@@ -54,5 +60,7 @@ class BookingController extends CI_Controller {
 
         echo json_encode($data);
     }
+
+    
 
 }

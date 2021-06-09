@@ -4,10 +4,10 @@
     Cancle Booking : Button -->
 
 <?php $this->load->view('template/Navbar');?>
-<div class="container" style="width: 100%;">
+<div class="container" style="width: 100%; margin-top: 100px;">
 
-    <table class="table table-dark table-hover table-bordered dataTable" id="mydata" style="width: 100%">
-      <thead>
+    <table class="table table-hover dataTable" id="mydata" style="width: 100%">
+      <thead class="thead-dark">
         <tr>
           <th>Tanggal</th>
           <th>ID Kos</th>
@@ -41,7 +41,11 @@
             "data": "idKos"
             },
             {
-            "data": "status"
+            "data": "status", 
+            render: function(data, type, row) {
+                return data == 0 ? "Belum Lunas" :"Lunas"
+            }
+             
             }
         ]
         });
