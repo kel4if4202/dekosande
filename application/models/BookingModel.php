@@ -18,7 +18,7 @@ class BookingModel extends CI_Model {
 
     public function getBookingByNIK($nik)
     {
-        return $this->db->query('SELECT `booking`.`tanggal` as `tanggal`, `kos`.`namaKos`, `booking`.`status` FROM `booking` LEFT JOIN `kos` ON `kos`.`idKos` = `booking`.`idKos`;')->result_array();
+        return $this->db->query('SELECT `booking`.`tanggal` as `tanggal`, `kos`.`namaKos`, `booking`.`status` FROM `booking` LEFT JOIN `kos` ON `kos`.`idKos` = `booking`.`idKos` WHERE `booking`.`NIK` = '.$nik.';')->result_array();
     }
 
 }
