@@ -21,6 +21,10 @@ class BookingModel extends CI_Model {
         return $this->db->query('SELECT `booking`.`tanggal` as `tanggal`, `kos`.`namaKos`, `booking`.`status` FROM `booking` LEFT JOIN `kos` ON `kos`.`idKos` = `booking`.`idKos` WHERE `booking`.`NIK` = '.$nik.';')->result_array();
     }
 
+    public function getlistbooking($nik){
+        return $this->db->query('SELECT `booking`.`tanggal` as `tanggal`, `kos`.`namaKos`, `booking`.`status` FROM `booking` LEFT JOIN `kos` ON `kos`.`idKos` = `booking`.`idKos` WHERE `kos`.`NIK` = '.$nik.';')->result_array();
+    }
+
 }
 
 /* End of file ModelName.php */
