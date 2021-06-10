@@ -61,6 +61,13 @@ class BookingController extends CI_Controller {
         echo json_encode($data);
     }
 
+    public function list_booking()
+    {
+        $data = $this->BookingModel->getlistbooking($this->session->userdata('data_login')['NIK']);
+
+        echo json_encode($data);
+    }
+
     
 
 }
