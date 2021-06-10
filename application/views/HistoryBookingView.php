@@ -50,7 +50,7 @@
             },
             {
                 "render": function(data, type, row){
-                    return '<button type="button" class="btn btn-primary" onclick=document.location.href="<?= site_url('Welcome/pembayaran') ?>"><i class="fas fa-user-edit"></i></button>'
+                    return `<button type="button" class="btn btn-primary" onclick=document.location.href="<?= site_url('Welcome/pembayaran') ?>"><i class="fas fa-user-edit"></i></button>`
                 }
             }
         ]

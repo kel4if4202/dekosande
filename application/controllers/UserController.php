@@ -113,7 +113,8 @@ class UserController extends CI_Controller {
                 'nama' => $this->input->post('nama'),
                 'jenis_kelamin' => $this->input->post('jenis_kelamin'),
                 'email' => $this->input->post('email'),
-                'tlahir' => $this->input->post('tlahir')
+                'tlahir' => $this->input->post('tlahir'),
+                'peran' => $this->session->userdata('data_login')['peran']
             ];
             $this->UserModel->updateUser($data_update, $NIK);
             $data_update['NIK'] = $NIK;
