@@ -36,6 +36,11 @@ class KostModel extends CI_Model {
 
         return $query->result_array();
     }
+    public function editKos($data, $id)
+    {
+        $this->db->where('idKos', $id);
+        return $this->db->update('kos', $data);
+    }
 
 }
 

@@ -6,7 +6,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-3 col-12 p-3 p-md-0 d-flex flex-column align-items-center">
-        <img src="<?= base_url('asset/0.jpg') ?>" alt="bendi.png" style="border-radius: 100px; border: 1px solid white; box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.5);" width="200px" height="200px">
+        <img src="<?= base_url('asset/2.jpg') ?>" alt="bendi.png" style="border: 1px solid white;" width="200px" height="200px">
         <h3 class="my-3 text-wrap text-center">Profil <?= $this->session->userdata('nama'); ?></h3>
       </div>
       <div class="col-md-9 col-12 p-3 p-md-0 p-3">
@@ -26,7 +26,7 @@
             </div>
             <div class="form-group">
               <label for="hargaKos" class="col-form-label">Harga Kos</label>
-              <input type="text" id="hargaKos" name="hargaKos" class="form-control">
+              <input type="text" id="hargaKos" name="hargaKos" class="form-control" placeholder="Pertahun">
             </div>
             <div class="form-group">
               <label for="alamatKos" class="col-form-label">Alamat Kos</label>
@@ -40,7 +40,7 @@
               <input type="hidden" id="hidden" name="hidden" class="form-control">
             </div>
             <div class="form-button text-right">
-              <button type="submit" class="btn btn-primary" data-target="#modal" data-toggle="modal">Update</button>
+              <button type="submit" class="btn btn-primary" data-target="#modal" data-toggle="modal">Input</button>
             </div>
           </form>
         </div>
