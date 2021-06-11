@@ -32,7 +32,7 @@
               <input type="hidden" id="hidden" name="hidden" class="form-control">
             </div>
             <div class="form-button text-right">
-              <button type="submit" class="btn btn-primary" data-target="#modal" data-toggle="modal">Edit</button>
+              <button type="submit" class="btn btn-dark btn-primary" data-target="#modal" data-toggle="modal">Edit</button>
             </div>
           </form>
         </div>

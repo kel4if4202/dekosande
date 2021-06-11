@@ -10,7 +10,6 @@ class KostController extends CI_Controller {
         $this->load->helper('form');
         $this->load->model('KostModel');
         
-        
     }
 
     public function index()
@@ -30,6 +29,25 @@ class KostController extends CI_Controller {
             "deskripsi" => $this->input->post('deskripsi', true),
             "NIK" => $nik['NIK']
 		];
+        $config['upload_path']          = './asset/upload/';
+        $config['allowed_types']        = 'gif|jpg|png';
+        $config['max_size']             = 10000;
+        $config['max_width']            = 10240;
+        $config['max_height']           = 76800;
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload('userfile'))
+            {
+                $error = array('error' => $this->upload->display_errors());
+                    // $this->load->view('upload_form', $error);
+                    var_dump($error);
+            }
+        else
+            {
+                $data = array('upload_data' => $this->upload->data());
+                    $this->load->view('upload_success', $data);
+            }
 
 		$this->KostModel->tambahKos($data);
 		redirect('Welcome','refresh');
@@ -67,6 +85,27 @@ class KostController extends CI_Controller {
         ];
         $this->KostModel->editKos($data, $idKos);
         redirect('KostController');
+    }
+    public function do_upload()
+    {
+        $config['upload_path']          = './asset/';
+        $config['allowed_types']        = 'gif|jpg|png';
+        $config['max_size']             = 10000;
+        $config['max_width']            = 10240;
+        $config['max_height']           = 76800;
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload('userfile'))
+            {
+                $error = array('error' => $this->upload->display_errors());
+                    $this->load->view('upload_form', $error);
+            }
+        else
+            {
+                $data = array('upload_data' => $this->upload->data());
+                    $this->load->view('upload_success', $data);
+            }
     }
 
     
