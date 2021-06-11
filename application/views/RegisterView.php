@@ -1,6 +1,6 @@
 <!-- Dimas -->
 <?= $this->session->flashdata('message'); ?>
-<div class="bg-gradient-primary">
+<div style="background-color:#212529;">
 
     <div class="container">
 
@@ -8,7 +8,7 @@
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
                 <div class="row">
-                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                    <img src= "<?= base_url("asset/gambar kosan 3.png")?>" class="col-lg-5 d-none d-lg-block" >
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
@@ -54,7 +54,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <button type="submit" href="<?= site_url('Welcome/login') ?>" class="btn btn-primary btn-user btn-block">
+                                <button type="submit" href="<?= site_url('Welcome/login') ?>" class="btn btn-dark btn-user btn-block">
                                     Register Account
                                 </button>
                                 <hr>
