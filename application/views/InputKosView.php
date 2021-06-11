@@ -8,10 +8,15 @@
       <div class="col-md-3 col-12 p-3 p-md-0 d-flex flex-column align-items-center">
         <img src="<?= base_url('asset/2.jpg') ?>" alt="bendi.png" style="border: 1px solid white;" width="200px" height="200px">
         <h3 class="my-3 text-wrap text-center">Profil <?= $this->session->userdata('nama'); ?></h3>
+        <!-- <form action="upload.php" method="post" enctype="multipart/form-data">
+          Select image to upload:
+          <input type="file" name="fileToUpload" id="fileToUpload">
+          <input type="submit" value="Upload Image" name="submit">
+        </form> -->
       </div>
       <div class="col-md-9 col-12 p-3 p-md-0 p-3">
         <div class="ml-md-5 ml-0">
-          <form id="profileForm" method="POST" action='<?= site_url("KostController/inputKos")?>'>
+          <form id="profileForm" method="POST" action='<?= site_url("KostController/inputKos")?>' enctype="multipart/form-data">
             <div class="form-group">
               <label for="namaKos" class="col-form-label">Nama Kos</label>
               <input type="text" id="namaKos" name="namaKos" class="form-control">
@@ -37,10 +42,14 @@
               <input type="text" id="deskripsi" name="deskripsi" class="form-control">
             </div>
             <div class="form-group">
+              <label for="gambar" class="col-form-label">Gambar</label>
+              <input type="file" id="gambar" name="userfile" class="form-control" size="20">
+            </div>
+            <div class="form-group">
               <input type="hidden" id="hidden" name="hidden" class="form-control">
             </div>
             <div class="form-button text-right">
-              <button type="submit" class="btn btn-primary" data-target="#modal" data-toggle="modal">Input</button>
+              <button type="submit" class="btn btn-dark btn-primary" data-target="#modal" data-toggle="modal">Input</button>
             </div>
           </form>
         </div>
