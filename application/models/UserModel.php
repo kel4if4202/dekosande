@@ -12,7 +12,7 @@ class UserModel extends CI_Model {
     public function getUser($no_hp)
     {
         $this->db->where('no_hp', $no_hp);
-        return $this->db->get('user')->row();   
+        return $this->db->get('user')->row(); 
     }
 
     public function updateUser($data, $NIK) {
