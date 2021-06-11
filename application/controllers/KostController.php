@@ -50,6 +50,25 @@ class KostController extends CI_Controller {
         
     }
 
+    public function getKostbyId($idKos)
+    {
+        $data['data'] = $this->KostModel->getKostbyId($idKos);
+        $data['main_view'] = 'EditKosView';
+        $data['title'] = 'Edit Kos';
+        $this->load->view('PageView', $data);
+    }
+    public function editKos($idKos)
+    {
+        $data = [
+            "namaKos" => $this->input->post('namaKos', true),
+            "hargaKos" => $this->input->post('hargaKos', true),
+            "alamatKos" => $this->input->post('alamatKos', true),
+            "deskripsi" => $this->input->post('deskripsi', true)
+        ];
+        $this->KostModel->editKos($data, $idKos);
+        redirect('KostController');
+    }
+
     
     
 
