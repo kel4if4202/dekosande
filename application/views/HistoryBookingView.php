@@ -49,8 +49,9 @@
              
             },
             {
+                "data": "idBooking",
                 "render": function(data, type, row){
-                    return `<button type="button" class="btn btn-primary" onclick=document.location.href="<?= site_url('Welcome/pembayaran') ?>"><i class="fas fa-user-edit"></i></button>`
+                    return row.status == 0 ?`<button type="button" class="btn btn-primary" onclick=document.location.href="<?= site_url('BookingController/getBookingById/') ?>${data}"><i class="fas fa-user-edit"></i></button>`: `<i class="fas fa-check"></i>`
                 }
             }
         ]

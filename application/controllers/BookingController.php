@@ -68,6 +68,23 @@ class BookingController extends CI_Controller {
         echo json_encode($data);
     }
 
-    
+    public function getBookingById($id)
+    {
+        $data['data'] = $this->BookingModel->getBookingById($id);
+
+        $data['main_view'] = 'PembayaranView';
+        $data['title'] = 'Pembayaran';
+        $this->load->view('PageView', $data);
+    }
+
+    public function pembayaran($id)
+    {
+        $data = [
+            'status' => 1
+        ];
+
+        $this->BookingModel->pembayaran($data, $id);
+        redirect('Welcome/historyBooking');
+    }
 
 }

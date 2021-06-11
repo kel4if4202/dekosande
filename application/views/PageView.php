@@ -34,7 +34,11 @@
 </head>
 
 <body>
-  <?php $this->load->view($main_view); ?>
+  <?php if(isset($data)) {
+          $this->load->view($main_view, $data);
+        } else {
+          $this->load->view($main_view);
+        } ?>
 </body>
 
 </html>
