@@ -6,8 +6,9 @@
   <div class="container">
     <div class="row">
       <div class="col-md-3 col-12 p-3 p-md-0 d-flex flex-column align-items-center">
-        <img src="<?= base_url('asset/2.jpg') ?>" alt="bendi.png" style="border: 1px solid white;" width="200px" height="200px">
+        <img src="<?= base_url('asset/gambar kosan 1.png') ?>" alt="kosan.png" style="border: 1px solid white;" width="200px" height="200px">
         <h3 class="my-3 text-wrap text-center">Profil <?= $this->session->userdata('nama'); ?></h3>
+        <h5><?= $this->session->userdata('data_login')['nama'] ?></h5>
         <!-- <form action="upload.php" method="post" enctype="multipart/form-data">
           Select image to upload:
           <input type="file" name="fileToUpload" id="fileToUpload">
@@ -39,7 +40,7 @@
             </div>
             <div class="form-group">
               <label for="deskripsi" class="col-form-label">Deskripsi</label>
-              <input type="text" id="deskripsi" name="deskripsi" class="form-control">
+              <textarea class="form-control" name="deskripsi" id="deskripsi" cols="30" rows="10"></textarea>
             </div>
             <div class="form-group">
               <label for="gambar" class="col-form-label">Gambar</label>
