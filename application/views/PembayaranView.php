@@ -3,8 +3,8 @@
 <div class="container  mb-5 d-flex justify-content-center" style="margin-top: 100px;">
     <div class="card p-5">
         <div>
-            <h4 class="heading">Upgrade your plan</h4>
-            <p class="text">Please make the payment to start enjoying all the features of our premium plan as soon as possible</p>
+            <h4 class="heading">Pembayaran</h4>
+            <p class="text">Segera lakukan pembayaran agar kosan anda dapat langsung ditempati.</p>
         </div>
         <div class="pricing p-3 rounded mt-4 d-flex justify-content-between">
             <div class="images d-flex flex-row align-items-center"> 

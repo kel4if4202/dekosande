@@ -25,10 +25,17 @@
               <label for="username" class="col-form-label">Nama</label>
               <input type="text" id="nama" name="nama" class="form-control" value="<?= $this->session->userdata('data_login')['nama'] ?>">
             </div>
+            <?php if($this->session->userdata('data_login')['jenis_kelamin'] == 0) { ?>
             <div class="form-group">
               <label for="jenis_kelamin" class="col-form-label">Jenis Kelamin</label>
-              <input type="text" id="jenis_kelamin" name="jenis_kelamin" class="form-control" value="<?= $this->session->userdata('data_login')['jenis_kelamin'] ?>">
+              <input type="text" id="jenis_kelamin" name="jenis_kelamin" class="form-control" value="Perempuan">
             </div>
+            <?php } else { ?>
+            <div class="form-group">
+              <label for="jenis_kelamin" class="col-form-label">Jenis Kelamin</label>
+              <input type="text" id="jenis_kelamin" name="jenis_kelamin" class="form-control" value="Laki-laki">
+            </div>
+            <?php } ?>
             <div class="form-group">
               <label for="email" class="col-form-label">Email</label>
               <input type="text" id="email" name="email" class="form-control" value="<?= $this->session->userdata('data_login')['email'] ?>">
