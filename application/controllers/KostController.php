@@ -20,15 +20,6 @@ class KostController extends CI_Controller {
     }
     public function inputKos()
     {
-        $nik = $this->session->userdata('data_login');
-        $data = [
-            "namaKos" => $this->input->post('namaKos', true),
-			"jenisKos" => $this->input->POST('jenisKos', true),
-			"hargaKos" => $this->input->post('hargaKos', true),
-			"alamatKos" => $this->input->post('alamatKos', true),
-            "deskripsi" => $this->input->post('deskripsi', true),
-            "NIK" => $nik['NIK']
-		];
         $config['upload_path']          = './asset/upload/';
         $config['allowed_types']        = 'gif|jpg|png';
         $config['max_size']             = 10000;
@@ -37,20 +28,29 @@ class KostController extends CI_Controller {
 
         $this->load->library('upload', $config);
 
-        if ( ! $this->upload->do_upload('userfile'))
-            {
-                $error = array('error' => $this->upload->display_errors());
-                    // $this->load->view('upload_form', $error);
-                    var_dump($error);
-            }
-        else
-            {
-                $data = array('upload_data' => $this->upload->data());
-                    $this->load->view('upload_success', $data);
-            }
+        if ( ! $this->upload->do_upload('userfile')) {
+            $error = array('error' => $this->upload->display_errors());
+            var_dump($error);
+            redirect('Welcome/inputKos','refresh');
+        } else {
+            $data_upload = array('upload_data' => $this->upload->data());
+            
+            $nik = $this->session->userdata('data_login');
+            $data = [
+                "namaKos" => $this->input->post('namaKos', true),
+                "jenisKos" => $this->input->POST('jenisKos', true),
+                "hargaKos" => $this->input->post('hargaKos', true),
+                "alamatKos" => $this->input->post('alamatKos', true),
+                "deskripsi" => $this->input->post('deskripsi', true),
+                "nama_file" => $data_upload['upload_data']['file_name'],
+                "NIK" => $nik['NIK']
+            ];
 
-		$this->KostModel->tambahKos($data);
-		redirect('Welcome','refresh');
+            $this->KostModel->tambahKos($data);
+            redirect('Welcome','refresh');
+        }
+
+        
     }
 
     public function data_kost()
