@@ -64,6 +64,7 @@ class KostController extends CI_Controller {
     {
         $data['main_view'] = 'KosView';
         $data['user'] = $this->KostModel->getKostbyId($idKos);
+        $data['kos'] = $this->KostModel->getAllKost();
         $this->load->view('PageView', $data);
         
     }

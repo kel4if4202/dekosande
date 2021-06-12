@@ -41,10 +41,7 @@ class KostModel extends CI_Model {
         $this->db->where('idKos', $id);
         return $this->db->update('kos', $data);
     }
-    public function uploadGambar($data)
-    {
-        
-    }
+    
 }
 
 /* End of file ModelName.php */
