@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2021 at 08:18 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.1
+-- Generation Time: Jun 12, 2021 at 03:58 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -36,6 +35,13 @@ CREATE TABLE `booking` (
   `NIK` varchar(16) NOT NULL,
   `idKos` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `booking`
+--
+
+INSERT INTO `booking` (`idBooking`, `status`, `tanggal`, `biaya`, `NIK`, `idKos`) VALUES
+(20, 1, '2021-06-12', 9000000, '8250', 11);
 
 -- --------------------------------------------------------
 
@@ -83,7 +89,12 @@ CREATE TABLE `kos` (
 --
 
 INSERT INTO `kos` (`idKos`, `namaKos`, `jenisKos`, `hargaKos`, `alamatKos`, `deskripsi`, `nama_file`, `NIK`) VALUES
-(11, 'Kedasih', 1, 9000000, 'Sukabirus', 'Kos gandos', 'Logo_Telkom_University_potrait.png', '1');
+(11, 'Kedasih', 1, 9000000, 'Sukabirus', 'Kos gandos', 'Logo_Telkom_University_potrait.png', '1'),
+(12, 'Kost Tes', 1, 123132, 'Jakarta', 'kos bagus', '0.jpg', '8250'),
+(14, 'WCW', 1, 9500000, 'samping IFI', 'nambah gope', 'kosan1.jpg', '8250'),
+(15, 'kedasih', 0, 7500000, 'rajawali futsal', 'pungli', 'kos2.jpg', '8250'),
+(16, 'Aladin', 0, 10000000, 'Depan IFI Futsal', 'Kost Laki Laki', 'kost-1.jpg', '8250'),
+(17, 'Pondok Juara', 1, 9500000, 'Depan WCW', 'kosan si mas rehan aryo', 'kostPJ.jpg', '8250');
 
 -- --------------------------------------------------------
 
@@ -144,7 +155,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`NIK`, `no_hp`, `password`, `nama`, `jenis_kelamin`, `email`, `tlahir`, `peran`) VALUES
 ('1', '081208120812', 'e2fc714c4727ee9395f324cd2e7f331f', 'Dimas', 1, '1@gmail.com', '2021-06-09', 1),
-('2', '123', 'e2fc714c4727ee9395f324cd2e7f331f', 'Rizqi', 0, '2@gmail.com', '2021-06-09', 0);
+('2', '123', 'e2fc714c4727ee9395f324cd2e7f331f', 'Rizqi', 0, '2@gmail.com', '2021-06-09', 0),
+('8250', '8520', 'a709909b1ea5c2bee24248203b1728a5', 'jek_penjual', 1, 'a@test.com', '2021-06-15', 1);
 
 --
 -- Indexes for dumped tables
@@ -177,7 +189,7 @@ ALTER TABLE `image`
 --
 ALTER TABLE `kos`
   ADD PRIMARY KEY (`idKos`),
-  ADD UNIQUE KEY `NIK` (`NIK`);
+  ADD KEY `NIK` (`NIK`) USING BTREE;
 
 --
 -- Indexes for table `kos_fasilitas`
@@ -214,7 +226,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `idBooking` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `idBooking` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `fasilitas`
@@ -232,7 +244,7 @@ ALTER TABLE `image`
 -- AUTO_INCREMENT for table `kos`
 --
 ALTER TABLE `kos`
-  MODIFY `idKos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `idKos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `pembayaran`
