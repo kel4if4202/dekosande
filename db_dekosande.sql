@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2021 at 03:58 PM
+-- Generation Time: Jun 14, 2021 at 01:19 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -35,13 +35,6 @@ CREATE TABLE `booking` (
   `NIK` varchar(16) NOT NULL,
   `idKos` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `booking`
---
-
-INSERT INTO `booking` (`idBooking`, `status`, `tanggal`, `biaya`, `NIK`, `idKos`) VALUES
-(20, 1, '2021-06-12', 9000000, '8250', 11);
 
 -- --------------------------------------------------------
 
@@ -89,12 +82,17 @@ CREATE TABLE `kos` (
 --
 
 INSERT INTO `kos` (`idKos`, `namaKos`, `jenisKos`, `hargaKos`, `alamatKos`, `deskripsi`, `nama_file`, `NIK`) VALUES
-(11, 'Kedasih', 1, 9000000, 'Sukabirus', 'Kos gandos', 'Logo_Telkom_University_potrait.png', '1'),
-(12, 'Kost Tes', 1, 123132, 'Jakarta', 'kos bagus', '0.jpg', '8250'),
-(14, 'WCW', 1, 9500000, 'samping IFI', 'nambah gope', 'kosan1.jpg', '8250'),
-(15, 'kedasih', 0, 7500000, 'rajawali futsal', 'pungli', 'kos2.jpg', '8250'),
-(16, 'Aladin', 0, 10000000, 'Depan IFI Futsal', 'Kost Laki Laki', 'kost-1.jpg', '8250'),
-(17, 'Pondok Juara', 1, 9500000, 'Depan WCW', 'kosan si mas rehan aryo', 'kostPJ.jpg', '8250');
+(14, 'WCW', 1, 9500000, 'samping IFI', 'Fasilitas Kamar: <br>\r\n- Kasur besar <br>\r\n- Meja <br>\r\n- Lemari  <br>\r\n<br>\r\nFasilitias Kamar Mandi: <br>\r\n- Kamar mandi dalam  <br>\r\n- Kloset duduk<br>\r\n- Shower<br>\r\n<br>\r\nFasilitas Umum:<br>\r\n- Jemuran di lantai 3<br>\r\n- Parkir motor  <br>\r\n- Dekat kampus <br>\r\n- Terdapat kantin <br>\r\n<br>\r\nHarga : Rp. 9.500.000 / tahun (sudah termasuk iuran rt, kebersihan)', 'kosan1.jpg', '8250'),
+(16, 'Aladin', 1, 13000000, 'Depan IFI Futsal', 'Fasilitas Kamar: <br>\r\n- Kasur besar <br>\r\n- Meja <br>\r\n- Lemari  <br>\r\n- Jendela <br>\r\n- Hanger <br>\r\n<br>\r\nFasilitias Kamar Mandi: <br>\r\n- Kamar mandi dalam  <br>\r\n- Kloset duduk<br>\r\n- Shower<br>\r\n- Air jernih (toren pakai filter)<br>\r\n<br>\r\nFasilitas Umum:<br>\r\n- Jemuran di lantai 3<br>\r\n- Ada dapur di lantai 1<br>\r\n- Dapet kunci pintu kaca masing-masing<br>\r\n- Wifi bisa join<br>\r\n- Parkir motor  <br>\r\n- Dekat kampus <br>\r\n<br>\r\nHarga : Rp. 13.000.000 / tahun (sudah termasuk iuran rt, kebersihan)', 'kost-1.jpg', '8250'),
+(17, 'Pondok Juara', 1, 9500000, 'Depan WCW', 'Fasilitas Kamar: <br>\r\n- Kasur <br>\r\n- Meja <br>\r\n- Lemari  <br>\r\n- Kursi <br>\r\n<br>\r\nFasilitias Kamar Mandi: <br>\r\n- Kamar mandi dalam  <br>\r\n- Kloset duduk<br>\r\n- Shower water heater<br>\r\n<br>\r\nFasilitas Umum:<br>\r\n- Jemuran di lantai 3<br>\r\n- Dapur bersama<br>\r\n- Dapet kunci pintu kaca masing-masing<br>\r\n- Wifi bisa join<br>\r\n- Parkir motor  <br>\r\n- Dekat kampus <br>\r\n<br>\r\nHarga : Rp. 9.500.000 / tahun (sudah termasuk kebersihan)', 'kostPJ.jpg', '8250'),
+(18, 'Rajawali Kost', 0, 1000000, 'Jl. Sukabirus (Depan Rajawali Futsal)', 'Fasilitas Kamar: <br>\r\n- Kasur single Meja <br>\r\n- Lemari  <br>\r\n- Meja dan kursi belajar <br>\r\n<br>\r\nFasilitias Kamar Mandi: <br>\r\n- Kamar mandi luar  <br>\r\n- Kloset duduk<br>\r\n- Shower<br>\r\n- Air jernih (toren pakai filter)<br>\r\n<br>\r\nFasilitas Umum:<br>\r\n- Dapet kunci pintu kaca masing-masing<br>\r\n- Wifi bisa join<br>\r\n- Parkir motor  <br>\r\n- Dekat kampus <br>\r\n- Dekat tempat futsal rajawali <br>\r\n<br>\r\nHarga : Rp. 10.000.000 / tahun ', 'kost1.jpg', '001'),
+(19, 'Pondok Kenangan ', 0, 8000000, 'Jl. Sukapura no. 12', 'Fasilitas Kamar: <br>\r\n- Kasur <br>\r\n- Meja Lesehan <br>\r\n- Lemari  <br>\r\n<br>\r\nFasilitias Kamar Mandi: <br>\r\n- Kamar mandi dalam  <br>\r\n- Kloset duduk<br>\r\n- Shower<br>\r\n- Water Heater<br>\r\n<br>\r\nFasilitas Umum:<br>\r\n- Jemuran di lantai 3<br>\r\n- Dapur Bersama <br>\r\n- Parkir motor  <br>\r\n- Dekat kampus <br>\r\n<br>\r\nHarga : Rp. 8.000.000 / tahun (sudah termasuk kebersihan)', 'kost2.jpg', '001'),
+(20, 'Wisma Singgahsini', 1, 7500000, 'Jl. Radio no. 34', 'Fasilitas Kamar: <br>\r\n- Kasur besar <br>\r\n- Meja <br>\r\n- Lemari  <br>\r\n\r\n<br>\r\nFasilitias Kamar Mandi: <br>\r\n- Kamar mandi dalam  <br>\r\n- Kloset duduk<br>\r\n- Shower<br>\r\n<br>\r\nFasilitas Umum:<br>\r\n- Jemuran di lantai 3<br>\r\n- Ada dapur di lantai 1<br>\r\n- Dapet kunci pintu kaca masing-masing<br>\r\n- Wifi bisa join<br>\r\n- Parkir motor  <br>\r\n- Dekat kampus <br>\r\n<br>\r\nHarga : Rp. 7.500.000 / tahun (sudah termasuk iuran rt, kebersihan)', 'kost3.jpg', '002'),
+(21, 'Wisma Udin', 0, 13000000, 'Jl. Sukabirus no.23', 'Fasilitas Kamar: <br>\r\n- Kasur besar <br>\r\n- Meja <br>\r\n- Lemari  <br>\r\n- Jendela <br>\r\n- Hanger <br>\r\n<br>\r\nFasilitias Kamar Mandi: <br>\r\n- Kamar mandi dalam  <br>\r\n- Kloset duduk<br>\r\n- Shower<br>\r\n- Air jernih (toren pakai filter)<br>\r\n<br>\r\nFasilitas Umum:<br>\r\n- Jemuran di lantai 3<br>\r\n- Ada dapur di lantai 1<br>\r\n- Dapet kunci pintu kaca masing-masing<br>\r\n- Wifi bisa join<br>\r\n- Parkir motor  <br>\r\n- Dekat kampus <br>\r\n<br>\r\nHarga : Rp. 13.000.000 / tahun (sudah termasuk iuran rt, kebersihan)', 'kost4.jpg', '002'),
+(22, 'Kost Audy Residence', 0, 5500000, 'Jl. Umayyah no.12', 'Fasilitas Kamar: <br>\r\n- Kosongan\r\n<br>\r\nFasilitias Kamar Mandi: <br>\r\n- Kamar mandi dalam  <br>\r\n- Kloset duduk<br>\r\n- Shower<br>\r\n<br>\r\nFasilitas Umum:<br>\r\n- Jemuran di lantai 3<br>\r\n- Ada dapur di lantai 1<br>\r\n- Ruang Tamu <br>\r\n- Wifi bisa join<br>\r\n- Parkir motor dan mobil  <br>\r\n- Dekat kampus <br>\r\n<br>\r\nHarga : Rp. 5.500.000 / tahun (sudah termasuk iuran rt, kebersihan)', 'kost5.jpg', '003'),
+(23, 'Dimas House', 1, 7500000, 'Jl. Haji Nawi no.69', 'Fasilitas Kamar: <br>\r\n- Kasur besar <br>\r\n- Meja <br>\r\n- Lemari  <br>\r\n- Kursi <br>\r\n<br>\r\nFasilitias Kamar Mandi: <br>\r\n- Kamar mandi dalam  <br>\r\n- Kloset duduk<br>\r\n- Shower<br>\r\n- Air jernih (toren pakai filter)<br>\r\n<br>\r\nFasilitas Umum:<br>\r\n- Jemuran <br>\r\n- Ada bersama<br>\r\n- Kunci gerbang masing - masing<br>\r\n- Wifi<br>\r\n- Parkir motor <br>\r\n- Dekat kampus <br>\r\n<br>\r\nHarga : Rp. 7.500.000 / tahun', 'kost6.jpg', '003'),
+(24, 'Kost Alam Makmur', 0, 1000000, 'Jl.Sayuti no. 35', 'Fasilitas Kamar: <br>\r\n- Kasur besar <br>\r\n- Meja <br>\r\n- Lemari  <br>\r\n- Kursi <br>\r\n<br>\r\nFasilitias Kamar Mandi: <br>\r\n- Kamar mandi dalam  <br>\r\n- Kloset duduk<br>\r\n- Shower Water Heater<br>\r\n<br>\r\nFasilitas Umum:<br>\r\n- Jemuran <br>\r\n- Dapur bersama<br>\r\n- Kunci gerbang masing - masing<br>\r\n- Wifi<br>\r\n- Parkir motor <br>\r\n- Dekat kampus <br>\r\n<br>\r\nHarga : Rp. 10.000.000 / tahun', 'kost7.jpg', '004'),
+(25, 'White House', 1, 7500000, 'Jl. Sukabirus depan geprek mesir', 'Fasilitas Kamar: <br>\r\n- Kasur besar <br>\r\n- Meja <br>\r\n- Lemari  <br>\r\n- Kursi <br>\r\n<br>\r\nFasilitias Kamar Mandi: <br>\r\n- Kamar mandi dalam  <br>\r\n- Kloset duduk<br>\r\n- Shower<br>\r\n- Air jernih (toren pakai filter)<br>\r\n<br>\r\nFasilitas Umum:<br>\r\n- Jemuran <br>\r\n- Ada bersama<br>\r\n- Kunci gerbang masing - masing<br>\r\n- Wifi<br>\r\n- Parkir motor <br>\r\n- Dekat kampus <br>\r\n<br>\r\nHarga : Rp. 7.500.000 / tahun', 'kost9.jpg', '004');
 
 -- --------------------------------------------------------
 
@@ -154,6 +152,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`NIK`, `no_hp`, `password`, `nama`, `jenis_kelamin`, `email`, `tlahir`, `peran`) VALUES
+('001', '001', 'dc5c7986daef50c1e02ab09b442ee34f', '001_penjual', 0, '001@gmail.com', '2021-06-01', 1),
+('002', '002', '93dd4de5cddba2c733c65f233097f05a', '002_penjual', 1, '002@gmail.com', '2021-06-01', 1),
+('003', '003', 'e88a49bccde359f0cabb40db83ba6080', '003_penjual', 1, '003@gmail.com', '2021-02-09', 1),
+('004', '004', '11364907cf269dd2183b64287156072a', '004_penjual', 1, '004@gmail.com', '2021-05-06', 1),
+('098', '098', '92daa86ad43a42f28f4bf58e94667c95', 'jek_pencari', 1, 'jek_pencari@gmail.com', '2021-06-08', 0),
 ('1', '081208120812', 'e2fc714c4727ee9395f324cd2e7f331f', 'Dimas', 1, '1@gmail.com', '2021-06-09', 1),
 ('2', '123', 'e2fc714c4727ee9395f324cd2e7f331f', 'Rizqi', 0, '2@gmail.com', '2021-06-09', 0),
 ('8250', '8520', 'a709909b1ea5c2bee24248203b1728a5', 'jek_penjual', 1, 'a@test.com', '2021-06-15', 1);
@@ -226,7 +229,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `idBooking` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `idBooking` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `fasilitas`
@@ -244,7 +247,7 @@ ALTER TABLE `image`
 -- AUTO_INCREMENT for table `kos`
 --
 ALTER TABLE `kos`
-  MODIFY `idKos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `idKos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `pembayaran`
@@ -267,7 +270,7 @@ ALTER TABLE `survey`
 --
 ALTER TABLE `booking`
   ADD CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`NIK`) REFERENCES `user` (`NIK`),
-  ADD CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`idKos`) REFERENCES `kos` (`idKos`);
+  ADD CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`idKos`) REFERENCES `kos` (`idKos`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `image`

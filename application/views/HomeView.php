@@ -36,8 +36,6 @@
                                             <h5 class="fw-bolder"> '.$data["namaKos"].' </h5>
                                             <!-- Kost price-->
                                             Rp'.$data["hargaKos"].'<br>
-                                            <!-- Deskripsi Kost -->
-                                            '.$data["deskripsi"].'<br>
                                             <!-- Alamat Kost-->
                                             '.$data["alamatKos"].'
                                         </div>
