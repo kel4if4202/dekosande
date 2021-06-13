@@ -42,6 +42,11 @@ class KostModel extends CI_Model {
         return $this->db->update('kos', $data);
     }
     
+    public function deleteKos($idKos)
+    {
+        $this->db->where('idKos', $idKos);
+        $this->db->delete('kos');
+    }
 }
 
 /* End of file ModelName.php */

@@ -87,4 +87,10 @@ class BookingController extends CI_Controller {
         redirect('Welcome/historyBooking');
     }
 
+    public function delete_booking($id_booking)
+    {
+        $this->BookingModel->delete_booking($id_booking);
+        redirect('Welcome/historyBooking');
+    }
+
 }
