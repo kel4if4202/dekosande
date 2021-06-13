@@ -36,6 +36,13 @@ class BookingModel extends CI_Model {
         return $this->db->update('booking', $data);
     }
 
+    public function delete_booking($id_booking) 
+    {
+        $this->db->where('idBooking', $id_booking);
+        $this->db->delete('booking');
+        
+    }
+
 }
 
 /* End of file ModelName.php */

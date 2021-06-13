@@ -63,7 +63,7 @@
             { 
             "data": "idKos", 
             "render": function(data, type, row){
-            return `<button type="button" class="btn btn-primary" onclick=document.location.href="<?= site_url('KostController/getKostbyId/') ?>${data}"><i class="fas fa-user-edit"></i></button>`
+            return `<button type="button" class="btn btn-primary" onclick=document.location.href="<?= site_url('KostController/getKostbyId/') ?>${data}"><i class="fas fa-user-edit"></i></button> <button type="button" class="btn btn-danger" onclick=document.location.href="<?= site_url('KostController/delete_kos/') ?>${data}"><i class="fas fa-trash"></i></button>`
             }
             }
             

@@ -138,6 +138,12 @@ class KostController extends CI_Controller {
             }
     }
 
+    public function delete_kos($idKos)
+    {
+        $this->KostModel->deleteKos($idKos);
+        redirect('Welcome/list_kost');
+    }
+
     
     
 
