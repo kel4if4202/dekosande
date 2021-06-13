@@ -17,6 +17,14 @@
               <label for="namaKos" class="col-form-label">Nama Kos</label>
               <input type="text" id="namaKos" name="namaKos" class="form-control" value="<?= $data->namaKos ?>">
             </div>
+            <div class="form-check">
+              <input type="radio" id="laki-laki" name="jenisKos" class="form-check-input" value='1'>
+              <label for="laki-laki" class="form-check-label">Laki-Laki</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" id="perempuan" name="jenisKos" class="form-check-input" value='0'>
+              <label for="perempuan" class="form-check-label">Perempuan</label>
+            </div>
             <div class="form-group">
               <label for="hargaKos" class="col-form-label">Harga Kos</label>
               <input type="text" id="hargaKos" name="hargaKos" class="form-control" value="<?= $data->hargaKos ?>">
@@ -29,10 +37,10 @@
               <label for="deskripsi" class="col-form-label">Deskripsi</label>
               <textarea class="form-control" name="deskripsi" id="deskripsi" cols="30" rows="10"><?= $data->deskripsi?></textarea>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="gambar" class="col-form-label">Gambar</label>
-              <input type="file" id="gambar" name="userfile" class="form-control" size="20">
-            </div>
+              <input type="file" id="gambar" name="nama_file" class="form-control" size="20">
+            </div> -->
             <div class="form-group">
               <input type="hidden" id="hidden" name="hidden" class="form-control">
             </div>
