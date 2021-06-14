@@ -26,7 +26,6 @@
                     </div>
                     <p class="lead"><?= $user->deskripsi?></p>
                     <div class="d-flex">
-                        <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
                         <button class="btn btn-outline-dark flex-shrink-0" type="button" onclick="document.location.href='<?= site_url('BookingController/input_booking/'.$user->idKos) ?>'">
                             <i class="bi-cart-fill me-1"></i>
                             Booking Kost
